@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Agência de Turismo - Descubra destinos incríveis com pacotes personalizados e experiências únicas">
+  <meta name="keywords" content="turismo, viagem, destinos, pacotes, Fernando de Noronha, Gramado, Bonito">
+  <meta name="author" content="Agência de Turismo">
+  
+  <!-- Open Graph para redes sociais -->
+  <meta property="og:title" content="Agência de Turismo - Descubra Destinos Incríveis">
+  <meta property="og:description" content="Explore lugares únicos, crie memórias inesquecíveis e viva experiências extraordinárias">
+  <meta property="og:type" content="website">
+  
+  <title>Agência de Turismo - Descubra Destinos Incríveis</title>
+  
+  <!-- Preload critical resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Efeito de zoom na imagem do card ao passar o mouse */
+    .group:hover .group-hover\:scale-110 {
+      transform: scale(1.1);
+    }
+    
+    /* Estilos para os botões das abas (ativo vs inativo) */
+    .tab-button.active {
+      background-color: white;
+      color: #2563eb; /* blue-600 */
+      box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    }
+    .tab-button {
+      transition: all 0.2s ease-in-out;
+    }
+    .tab-content {
+        display: none;
+    }
+    .tab-content.active {
+        display: block;
+    }
+    
+    /* Loading skeleton animation */
+    .skeleton {
+      background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+      background-size: 200% 100%;
+      animation: skeleton-loading 1.5s infinite;
+      border-radius: 8px;
+    }
+    
+    @keyframes skeleton-loading {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+  </style>
+</head>
+<body class="bg-white">
+
+  <!-- Skip to content para acessibilidade -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded-md z-50">
+    Pular para o conteúdo principal
+  </a>
+
+  <!-- Hero Section melhorado -->
+  <header class="hero-section relative h-[80vh] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80')" role="banner">
+    <div class="hero-overlay absolute inset-0"></div>
+    <div class="relative h-full flex items-center justify-center text-center px-responsive">
+      <div class="max-w-4xl mx-auto px-4">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 animate-fade-in">
+          Descubra Destinos Incríveis
+        </h1>
+        <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          Explore lugares únicos, crie memórias inesquecíveis e viva experiências extraordinárias
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="#main-content" 
+             class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 focus:ring-4 focus:ring-blue-300"
+             aria-label="Explorar destinos disponíveis">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2" aria-hidden="true">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Explorar Destinos
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Por que viajar conosco?</h2>
+        <p class="text-gray-600">Oferecemos experiências únicas e personalizadas para sua viagem dos sonhos</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="text-center p-6 bg-white rounded-lg shadow-md">
+          <div class="pt-6">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-blue-600"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Destinos Exclusivos</h3>
+            <p class="text-gray-600">Locais únicos e experiências inesquecíveis em todo o mundo</p>
+          </div>
+        </div>
+        <div class="text-center p-6 bg-white rounded-lg shadow-md">
+          <div class="pt-6">
+            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+               <svg xmlns="http://www.w.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-green-600"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Qualidade Garantida</h3>
+            <p class="text-gray-600">Parceiros e serviços cuidadosamente selecionados</p>
+          </div>
+        </div>
+        <div class="text-center p-6 bg-white rounded-lg shadow-md">
+          <div class="pt-6">
+            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-purple-600"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Atendimento 24/7</h3>
+            <p class="text-gray-600">Suporte dedicado durante toda sua viagem</p>
+          </div>
+        </div>
+        <div class="text-center p-6 bg-white rounded-lg shadow-md">
+          <div class="pt-6">
+            <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-orange-600"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Flexibilidade</h3>
+            <p class="text-gray-600">Pacotes personalizados de acordo com suas preferências</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="main-content" class="py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="space-y-8">
+        <div class="flex justify-center">
+          <div class="bg-gray-100 p-1 rounded-lg flex space-x-1">
+            <button data-tab="popular" class="tab-button active text-base px-6 py-2 rounded-md font-medium flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Destinos Populares
+            </button>
+            <button data-tab="packages" class="tab-button text-gray-600 text-base px-6 py-2 rounded-md font-medium flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+              Pacotes Prontos
+            </button>
+            <button data-tab="custom" class="tab-button text-gray-600 text-base px-6 py-2 rounded-md font-medium flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+              Monte seu Pacote
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <div id="popular" class="tab-content active">
+            <div id="popular-destinations-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              </div>
+          </div>
+
+          <div id="packages" class="tab-content">
+            <div id="package-list-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              </div>
+          </div>
+
+          <div id="custom" class="tab-content">
+             <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-lg">
+                <div class="p-8">
+                    <h3 class="text-3xl font-bold mb-8 text-center text-gray-900">Monte seu Pacote Personalizado</h3>
+                    
+                    <!-- Container para alertas de sucesso -->
+                    <div id="success-alert" class="hidden mb-6"></div>
+                    
+                    <form id="custom-package-form" class="space-y-6" onsubmit="submitCustomPackage(event)" novalidate>
+                        <fieldset class="space-y-6">
+                            <legend class="sr-only">Informações da viagem</legend>
+                            
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="destination" class="block text-sm font-semibold text-gray-700 mb-2">Destino*</label>
+                                    <input type="text" 
+                                           id="destination" 
+                                           name="destination"
+                                           placeholder="Para onde você quer ir?"
+                                           class="block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                           required
+                                           aria-describedby="destination-error">
+                                    <div id="destination-error" class="hidden text-red-600 text-sm mt-1" role="alert"></div>
+                                </div>
+                                
+                                <div>
+                                    <label for="people" class="block text-sm font-semibold text-gray-700 mb-2">Número de Pessoas*</label>
+                                    <input type="number" 
+                                           id="people" 
+                                           name="people"
+                                           min="1" 
+                                           max="20"
+                                           placeholder="Quantas pessoas?"
+                                           class="block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                           required
+                                           aria-describedby="people-error">
+                                    <div id="people-error" class="hidden text-red-600 text-sm mt-1" role="alert"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="start-date" class="block text-sm font-semibold text-gray-700 mb-2">Data de Início*</label>
+                                    <input type="date" 
+                                           id="start-date" 
+                                           name="start-date"
+                                           class="block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                           required
+                                           aria-describedby="startDate-error">
+                                    <div id="startDate-error" class="hidden text-red-600 text-sm mt-1" role="alert"></div>
+                                </div>
+                                
+                                <div>
+                                    <label for="end-date" class="block text-sm font-semibold text-gray-700 mb-2">Data de Fim*</label>
+                                    <input type="date" 
+                                           id="end-date" 
+                                           name="end-date"
+                                           class="block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                           required
+                                           aria-describedby="endDate-error">
+                                    <div id="endDate-error" class="hidden text-red-600 text-sm mt-1" role="alert"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="budget" class="block text-sm font-semibold text-gray-700 mb-2">Orçamento Total (R$)*</label>
+                                <input type="number" 
+                                       id="budget" 
+                                       name="budget"
+                                       min="100"
+                                       step="50"
+                                       placeholder="Qual seu orçamento total?"
+                                       class="block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                       required
+                                       aria-describedby="budget-error">
+                                <div id="budget-error" class="hidden text-red-600 text-sm mt-1" role="alert"></div>
+                            </div>
+                        </fieldset>
+                        
+                        <fieldset class="space-y-4">
+                            <legend class="block text-sm font-semibold text-gray-700 mb-4">Tipo de Acomodação</legend>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                <label class="flex items-center space-x-3 border rounded-lg p-4 cursor-pointer hover:border-blue-300 has-[:checked]:border-blue-600 has-[:checked]:bg-blue-50 transition-all">
+                                    <input type="radio" name="accommodation" value="hotel" class="text-blue-600 focus:ring-blue-500" checked>
+                                    <span class="font-medium">Hotel</span>
+                                </label>
+                                <label class="flex items-center space-x-3 border rounded-lg p-4 cursor-pointer hover:border-blue-300 has-[:checked]:border-blue-600 has-[:checked]:bg-blue-50 transition-all">
+                                    <input type="radio" name="accommodation" value="pousada" class="text-blue-600 focus:ring-blue-500">
+                                    <span class="font-medium">Pousada</span>
+                                </label>
+                                <label class="flex items-center space-x-3 border rounded-lg p-4 cursor-pointer hover:border-blue-300 has-[:checked]:border-blue-600 has-[:checked]:bg-blue-50 transition-all">
+                                    <input type="radio" name="accommodation" value="resort" class="text-blue-600 focus:ring-blue-500">
+                                    <span class="font-medium">Resort</span>
+                                </label>
+                                <label class="flex items-center space-x-3 border rounded-lg p-4 cursor-pointer hover:border-blue-300 has-[:checked]:border-blue-600 has-[:checked]:bg-blue-50 transition-all">
+                                    <input type="radio" name="accommodation" value="apartamento" class="text-blue-600 focus:ring-blue-500">
+                                    <span class="font-medium">Apartamento</span>
+                                </label>
+                            </div>
+                        </fieldset>
+                        
+                        <fieldset class="space-y-4">
+                            <legend class="block text-sm font-semibold text-gray-700 mb-4">Atividades de Interesse (opcionais)</legend>
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                                <label class="flex items-center space-x-3 cursor-pointer">
+                                    <input type="checkbox" name="activities" value="aventura" class="text-blue-600 focus:ring-blue-500 rounded">
+                                    <span>Aventura</span>
+                                </label>
+                                <label class="flex items-center space-x-3 cursor-pointer">
+                                    <input type="checkbox" name="activities" value="cultura" class="text-blue-600 focus:ring-blue-500 rounded">
+                                    <span>Cultura</span>
+                                </label>
+                                <label class="flex items-center space-x-3 cursor-pointer">
+                                    <input type="checkbox" name="activities" value="gastronomia" class="text-blue-600 focus:ring-blue-500 rounded">
+                                    <span>Gastronomia</span>
+                                </label>
+                                <label class="flex items-center space-x-3 cursor-pointer">
+                                    <input type="checkbox" name="activities" value="natureza" class="text-blue-600 focus:ring-blue-500 rounded">
+                                    <span>Natureza</span>
+                                </label>
+                                <label class="flex items-center space-x-3 cursor-pointer">
+                                    <input type="checkbox" name="activities" value="praia" class="text-blue-600 focus:ring-blue-500 rounded">
+                                    <span>Praia</span>
+                                </label>
+                                <label class="flex items-center space-x-3 cursor-pointer">
+                                    <input type="checkbox" name="activities" value="vida-noturna" class="text-blue-600 focus:ring-blue-500 rounded">
+                                    <span>Vida Noturna</span>
+                                </label>
+                            </div>
+                        </fieldset>
+                        
+                        <div>
+                            <label for="observations" class="block text-sm font-semibold text-gray-700 mb-2">Observações Especiais</label>
+                            <textarea id="observations" 
+                                      name="observations"
+                                      rows="4"
+                                      placeholder="Alguma solicitação especial ou informação adicional?"
+                                      class="block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors resize-vertical"></textarea>
+                        </div>
+                        
+                        <div class="text-center pt-4">
+                            <button type="submit" 
+                                    class="bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold py-4 px-8 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-200 transform hover:scale-105 focus:ring-4 focus:ring-blue-300 shadow-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block w-5 h-5 mr-2">
+                                    <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>
+                                </svg>
+                                Criar Meu Pacote Personalizado
+                            </button>
+                        </div>
+                        
+                        <p class="text-sm text-gray-500 text-center">
+                            * Campos obrigatórios. Após o envio, nossa equipe entrará em contato em até 24 horas.
+                        </p>
+                    </form>
+                </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+  <script src="script.js"></script>
+
+<!-- Modal para Detalhes do Destino -->
+<div id="destination-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
+  <div class="bg-white rounded-lg shadow-lg w-full max-w-2xl p-6 relative">
+    <button id="close-modal" class="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-2xl font-bold">&times;</button>
+    <div id="modal-content">
+      <!-- Conteúdo dinâmico aqui -->
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+version: 2
+build:
+  commands:
+    - npm install
+  watchPatterns:
+    - "**/*.js"
+    - "**/*.json"
+    - "**/*.html"
+    - "**/*.css"
+deploy:
+  startCommand: npm start
+  healthcheckPath: /health
+  healthcheckTimeout: 300
