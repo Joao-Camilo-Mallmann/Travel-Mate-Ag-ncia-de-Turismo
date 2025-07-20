@@ -8,7 +8,7 @@
 
 Uma plataforma moderna e responsiva para descobrir destinos incríveis e pacotes turísticos personalizados
 
-[![🌐 Ver Site Ao Vivo](https://img.shields.io/badge/🌐_Ver_Site_Ao_Vivo-4285f4?style=for-the-badge)](https://back-production-a75e.up.railway.app/)
+[![🌐 Ver Site Ao Vivo](https://img.shields.io/badge/🌐_Ver_Site_Ao_Vivo-4285f4?style=for-the-badge)](https://web-production-758be.up.railway.app/)
 [![🔗 GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/JoaoCamiloMallmann/back)
 [![⚡ Deploy](https://img.shields.io/badge/Deploy-Railway-0066ff?style=for-the-badge&logo=railway&logoColor=white)](https://railway.app)
 
@@ -54,7 +54,7 @@ Uma plataforma moderna e responsiva para descobrir destinos incríveis e pacotes
 
 <div align="center">
 
-### 🎬 **[🔗 ACESSE O SITE AQUI](https://back-production-a75e.up.railway.app/)**
+### 🎬 **[🔗 ACESSE O SITE AQUI](https://web-production-758be.up.railway.app/)**
 
 *Clique no link acima para ver o projeto funcionando!*
 
@@ -64,10 +64,10 @@ Uma plataforma moderna e responsiva para descobrir destinos incríveis e pacotes
 
 | Endpoint | Descrição | Link Direto |
 |----------|-----------|-------------|
-| � **Frontend** | Interface principal | [🔗 Acessar](https://back-production-a75e.up.railway.app/) |
-| 💚 **Health Check** | Status da API | [🔗 Testar](https://back-production-a75e.up.railway.app/health) |
-| 🏖️ **Destinos** | Lista todos os destinos | [🔗 Ver JSON](https://back-production-a75e.up.railway.app/api/v1/destinos) |
-| 📦 **Pacotes** | Lista todos os pacotes | [🔗 Ver JSON](https://back-production-a75e.up.railway.app/api/v1/pacotes) |
+| � **Frontend** | Interface principal | [🔗 Acessar](https://web-production-758be.up.railway.app/) |
+| 💚 **Health Check** | Status da API | [🔗 Testar](https://web-production-758be.up.railway.app/health) |
+| 🏖️ **Destinos** | Lista todos os destinos | [🔗 Ver JSON](https://web-production-758be.up.railway.app/api/v1/destinos) |
+| 📦 **Pacotes** | Lista todos os pacotes | [🔗 Ver JSON](https://web-production-758be.up.railway.app/api/v1/pacotes) |
 
 ### � **Preview da Interface:**
 
@@ -280,7 +280,7 @@ Este projeto está sob a licença **MIT**. Veja o arquivo [LICENSE](LICENSE) par
 
 ### 🌟 **Se este projeto foi útil, considere dar uma ⭐!**
 
-**[🔗 Visite o Site](https://back-production-a75e.up.railway.app/)** | **[📱 Ver Código](https://github.com/JoaoCamiloMallmann/back)** | **[🚀 Deploy](https://railway.app)**
+**[🔗 Visite o Site](https://web-production-758be.up.railway.app/)** | **[📱 Ver Código](https://github.com/JoaoCamiloMallmann/back)** | **[🚀 Deploy](https://railway.app)**
 
 ---
 
