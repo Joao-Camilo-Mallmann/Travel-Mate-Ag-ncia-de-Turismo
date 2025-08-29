@@ -1,5 +1,7 @@
 // --- CONFIGURAÇÃO DA API ---
 const API_BASE_URL = '/api/v1';
+// Número de WhatsApp para contato (somente dígitos, com DDI/DDD se desejar abrir direto no app)
+const WHATSAPP_NUMBER = '5599999999999'; // ajuste aqui para o número correto
 
 // --- VARIÁVEIS GLOBAIS PARA ARMAZENAR OS DADOS ---
 let destinations = [];
@@ -434,6 +436,7 @@ function validateCustomPackageForm() {
     const endDate = formData.get('end-date');
     const people = formData.get('people');
     const budget = formData.get('budget');
+    const phone = formData.get('phone');
     
     if (!destination || destination.trim().length < 3) {
         errors.destination = 'Destino deve ter pelo menos 3 caracteres';
@@ -468,6 +471,11 @@ function validateCustomPackageForm() {
         errors.budget = 'Orçamento mínimo é R$ 100';
     }
     
+    // Validação simples de telefone/WhatsApp (somente números, 10 a 13 dígitos)
+    if (!phone || !/^[0-9]{10,13}$/.test(String(phone).replace(/\D/g, ''))) {
+        errors.phone = 'Informe um WhatsApp válido com DDD (somente números)';
+    }
+    
     // Aplicar feedback visual
     Object.keys(errors).forEach(field => {
         const input = form.querySelector(`[name="${field === 'startDate' ? 'start-date' : field === 'endDate' ? 'end-date' : field}"]`);
@@ -486,7 +494,7 @@ function validateCustomPackageForm() {
     });
     
     // Limpar erros dos campos válidos
-    const allFields = ['destination', 'start-date', 'end-date', 'people', 'budget'];
+    const allFields = ['destination', 'start-date', 'end-date', 'people', 'budget', 'phone'];
     allFields.forEach(field => {
         const fieldKey = field.replace('-', '');
         if (!errors[fieldKey] && !errors[field]) {
@@ -572,6 +580,16 @@ function showSuccessAlert() {
                     <div class="text-green-700 space-y-2">
                         <p class="font-medium">Parabéns! Seu pacote foi criado com sucesso.</p>
                         <p class="text-sm">Nossa equipe entrará em contato em até 24h com uma proposta personalizada para sua viagem dos sonhos!</p>
+                        <div class="mt-3 p-3 bg-white rounded-md border border-green-200">
+                            <p class="text-sm text-green-700"><strong>Atenção:</strong> Para agilizar o atendimento, você pode nos chamar no WhatsApp agora mesmo.</p>
+                            <div class="mt-2">
+                                <a href="https://wa.me/${WHATSAPP_NUMBER}" target="_blank" rel="noopener noreferrer"
+                                   class="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 mr-2"><path d="M20.52 3.48A11.91 11.91 0 0012.06 0 12 12 0 000 12a11.91 11.91 0 003.48 8.46L2 24l3.66-1.44A12 12 0 1012.06 0a11.91 11.91 0 008.46 3.48zM12 22a10 10 0 01-5.09-1.39l-.36-.21-2.17.86.83-2.12-.24-.37A10 10 0 1112 22zm5.61-7.42c-.31-.15-1.82-.9-2.1-1s-.49-.15-.7.15-.8 1-.98 1.21-.36.23-.67.08a8.1 8.1 0 01-2.38-1.47 8.9 8.9 0 01-1.65-2.05c-.17-.31 0-.48.13-.63s.31-.36.46-.54a2.1 2.1 0 00.31-.52.57.57 0 000-.54c0-.16-.67-1.61-.92-2.21s-.49-.51-.67-.52h-.57a1.1 1.1 0 00-.8.37 3.35 3.35 0 00-1 2.5 5.79 5.79 0 001.22 3.07 13.22 13.22 0 004.51 4.63 15.37 15.37 0 003.23 1.34 3.82 3.82 0 001.76.11 2.88 2.88 0 001.9-1.35 2.35 2.35 0 00.16-1.35c-.06-.13-.28-.21-.59-.36z"/></svg>
+                                    Falar no WhatsApp
+                                </a>
+                            </div>
+                        </div>
                         <div class="flex items-center space-x-4 mt-4 text-sm">
                             <span class="flex items-center">
                                 <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
